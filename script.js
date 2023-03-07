@@ -28,3 +28,45 @@ function operate(operator, a, b) {
         return divide(a, b);
     }
 }
+
+let displayValue = "";
+let displayOperator = "";
+
+let tempNumberContainer = ""
+
+function updateCalculatorOutput() {
+    const calculatorOutputNum = document.querySelector('#result');
+    calculatorOutputNum.textContent = displayValue;
+}
+
+function updateCalculatorOperator() {
+    const calculatorOperator = document.querySelector('#operator');
+    calculatorOperator.textContent = displayOperator;
+}
+
+const calculatorButtons = document.querySelectorAll('.calculator-btn');
+
+calculatorButtons.forEach((calculatorButton) => {
+    calculatorButton.addEventListener('click', (e) => {
+        console.log(calculatorButton.value);
+        if (calculatorButton.value == 'clear') {
+            displayValue = "";
+            displayOperator = "";
+        }
+        else if (calculatorButton.value == '+' || calculatorButton.value == '-'
+            || calculatorButton.value == '*' || calculatorButton.value == '/') {
+            displayOperator = calculatorButton.value;
+            tempNumberContainer = displayValue;
+            displayValue = "";
+        }
+        else if (calculatorButton.value == '=') {
+            displayValue = operate(displayOperator,Number(tempNumberContainer),Number(displayValue));
+            displayOperator = "";
+        }
+        else {
+            displayValue += calculatorButton.value;
+        }
+        updateCalculatorOperator();
+        updateCalculatorOutput();
+    });
+});

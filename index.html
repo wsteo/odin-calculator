@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Calculator</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
     <h1>Odin Calculator</h1>
-    <div id="result">0</div>
+    <div id="result"></div>
+    <div id="operator"></div>
     <ul>
-        <li><button>7</button><button>8<button>9</button></li>
-        <li><button>4</button><button>5<button>6</button></li>
-        <li><button>1</button><button>2<button>3</button></li>
-        <li><button>0</button><button>=<button>Clear</button></li>
+        <li>
+            <button class="calculator-btn" value="7">7</button>
+            <button class="calculator-btn" value="8">8</button>
+            <button class="calculator-btn" value="9">9</button>
+        </li>
+        <li>
+            <button class="calculator-btn" value="4">4</button>
+            <button class="calculator-btn" value="5">5</button>
+            <button class="calculator-btn" value="6">6</button>
+        </li>
+        <li>
+            <button class="calculator-btn" value="1">1</button>
+            <button class="calculator-btn" value="2">2</button>
+            <button class="calculator-btn" value="3">3</button>
+        </li>
+        <li>
+            <button class="calculator-btn" value="0">0</button>
+            <button class="calculator-btn" value="=">=</button>
+            <button class="calculator-btn" value="clear">Clear</button>
+        </li>
+        <li>
+            <button class="calculator-btn" value="+">+</button>
+            <button class="calculator-btn" value="-">-</button>
+            <button class="calculator-btn" value="*">*</button>
+            <button class="calculator-btn" value="/">/</button>
+        </li>
     </ul>
 </body>
+
 </html>
